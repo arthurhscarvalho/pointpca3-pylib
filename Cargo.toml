@@ -1,0 +1,21 @@
+[package]
+name = "pointpca3"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "pointpca3"
+crate-type = ["cdylib"]
+
+[dependencies]
+nalgebra = "0.32.5"
+numpy = "0.24.0"
+rayon = "1.10.0"
+kd-tree = {version = "0.6.0", features = ["rayon"]}
+
+[dependencies.pointpca3-rs]
+path = "../pointpca3-rs/"
+
+[dependencies.pyo3]
+version = "0.24.1"
+features = ["extension-module"]
