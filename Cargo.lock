@@ -428,9 +428,7 @@ version = "1.0.0"
 dependencies = [
  "kd-tree",
  "nalgebra",
- "numpy",
  "pointpca2-rs",
- "pyo3",
  "rayon",
 ]
 

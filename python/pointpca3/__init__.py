@@ -1,11 +1,13 @@
 import numpy as np
+from numpy.typing import NDArray
+
 from .pointpca3 import compute_pointpca3 as __pointpca3_internal
 
 
 def __preprocess_point_cloud(
-    points: np.ndarray,
-    colors: np.ndarray,
-) -> tuple[np.ndarray, np.ndarray]:
+    points: NDArray,
+    colors: NDArray,
+) -> tuple[NDArray, NDArray]:
     if points.shape != colors.shape:
         raise Exception("Points and colors must have the same shape.")
     is_normalized = colors.max() <= 1 and colors.min() >= 0
@@ -20,14 +22,14 @@ def __preprocess_point_cloud(
 
 
 def compute_pointpca3(
-    points_reference: np.ndarray,
-    colors_reference: np.ndarray,
-    points_test: np.ndarray,
-    colors_test: np.ndarray,
+    points_reference: NDArray,
+    colors_reference: NDArray,
+    points_test: NDArray,
+    colors_test: NDArray,
     search_size=81,
     max_workers=0,
     verbose=False,
-) -> np.ndarray:
+) -> NDArray:
     """
     Compute PointPCA3 from reference and test point clouds.
 
@@ -56,7 +58,7 @@ def compute_pointpca3(
 
     Returns
     -------
-    pointpca3 : (1, 40) np.ndarray
+    pointpca3 : (1, 40) NDArray
         The computed PointPCA3 features (predictors).
 
     Notes
