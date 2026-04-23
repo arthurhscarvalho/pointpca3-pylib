@@ -18,7 +18,7 @@ python-source = "python"
 
 [dependency-groups]
 dev = [
-    "maturin>=1.8.3",
+    "maturin>=1.13.1",
     "patchelf>=0.17.2.2",
     "ruff>=0.11.3",
 ]
