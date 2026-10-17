@@ -425,6 +425,7 @@ dependencies = [
 [[package]]
 name = "pointpca3-rs"
 version = "1.0.0"
+source = "git+https://github.com/arthurhscarvalho/pointpca3-rs.git?tag=v1.0.0#5ffd294e94dd6d7da70c22afa7ef276cab499bf4"
 dependencies = [
  "kd-tree",
  "nalgebra",

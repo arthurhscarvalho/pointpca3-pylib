@@ -26,12 +26,11 @@ In a Python 3.11 or 3.12 environment:
 python -m pip install pointpca3
 ```
 
-A compatible wheel does not require a local Rust toolchain. To build from source, use the checkout instructions below, including any required backend directories.
+A compatible wheel does not require a local Rust toolchain. To build from source, use the checkout instructions below.
 
 ### From source
 
 ```bash
-git clone https://github.com/arthurhscarvalho/pointpca3-rs.git
 git clone https://github.com/arthurhscarvalho/pointpca3-pylib.git
 cd pointpca3-pylib
 python3.12 -m venv .venv
@@ -41,7 +40,7 @@ python -m pip install "maturin>=1.0,<2.0"
 python -m maturin develop --release
 ```
 
-Keep `pointpca3-rs/` and `pointpca3-pylib/` as sibling directories: [Cargo.toml](Cargo.toml) uses `../pointpca3-rs/`. Cargo fetches the transitive `pointpca2-rs` dependency from Git tag `v1.5.1`; that backend does not need a local checkout. The activation command above is for a POSIX shell. Re-run `python -m maturin develop --release` after changing the binding or its backend.
+Cargo fetches `pointpca3-rs` from its public Git tag `v1.0.0`, as declared in [Cargo.toml](Cargo.toml), and the transitive `pointpca2-rs` dependency from Git tag `v1.5.1`. No sibling backend checkout is required. The activation command above is for a POSIX shell. Re-run `python -m maturin develop --release` after changing the binding or updating its backend dependency.
 
 ## Usage
 
