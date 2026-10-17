@@ -14,7 +14,8 @@ rayon = "1.10.0"
 kd-tree = {version = "0.6.0", features = ["rayon"]}
 
 [dependencies.pointpca3-rs]
-path = "../pointpca3-rs/"
+git = "https://github.com/arthurhscarvalho/pointpca3-rs.git"
+tag = "v1.0.0"
 
 [dependencies.pyo3]
 version = "0.24.1"
